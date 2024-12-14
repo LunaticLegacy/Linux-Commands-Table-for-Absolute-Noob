@@ -1,14 +1,6 @@
 
-
-作者：<br>
-Bilibili 星之语VII (UID=244337560)<br>
-GitHub LunaticLegacy<br>
-版本：v1.0<br>
-日期：2024/12/14<br>
-
 ## 许可协议
 本项目基于 [Creative Commons BY 4.0 许可协议](https://creativecommons.org/licenses/by/4.0/) 共享。
-
 
 ## 目的
 <br>
@@ -49,6 +41,13 @@ $ sudo apt install <cmd><br>
 该命令的意思是“从根目录开始，递归删除所有文件”！<br>
 这会导致linux内所有文件被删除！该操作不可逆！且命令行操作没有回收站！！ <br>
 
-## 最后更新日期
-<text>2024/12/14 22:12:10</text>
-##
+## 最后更新及版本
+最后更新：<text>2024/12/14 22:12:10</text><br>
+版本：1.0
+
+## 署名
+Linux快速入门指令表 
+By 
+Bilibili 星之语VII (UID=244337560)<br>
+GitHub LunaticLegacy<br>
+
