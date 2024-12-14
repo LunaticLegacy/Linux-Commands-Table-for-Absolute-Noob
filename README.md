@@ -1,10 +1,14 @@
 
+
 作者：<br>
 Bilibili 星之语VII (UID=244337560)<br>
 GitHub LunaticLegacy<br>
 版本：v1.0<br>
 日期：2024/12/14<br>
-许可条款：CC-BY-NC-SA（署名-不可商用-相同方式共享）<br>
+
+Linux快速入门指令表 © 2024/12/14 by LunaticLegacy is licensed under CC BY-NC-SA 4.0 <br>
+
+
 <br>
 本表格用于萌新快速入门Linux操作系统，且表格为个人学习linux命令行操作时整理，可能存在大量错误，也可能存在不完备的地方。<br>
 <br>
