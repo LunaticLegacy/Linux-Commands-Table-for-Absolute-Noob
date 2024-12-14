@@ -32,9 +32,9 @@ sudo：只有root可用。（使用sudo前缀或用su进入root用户）<br>
 本表内会存在后续表，且同一部分的内容在表格中的颜色是相同的。<br>
 此外，本表暂时不会提供文本编辑器的使用教程——因为我自己也没啃下来vim。<br>
 如果找不到指令，请直接：<br>
-```
-$ sudo apt update<br>
-$ sudo apt install <cmd><br>
+``` bash
+$ sudo apt update
+$ sudo apt install <cmd>
 ```
 <br>
 
