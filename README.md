@@ -6,7 +6,9 @@ GitHub LunaticLegacy<br>
 版本：v1.0<br>
 日期：2024/12/14<br>
 
-Linux快速入门指令表 © 2024/12/14 by LunaticLegacy is licensed under CC BY-NC-SA 4.0 <br>
+## 许可协议
+本项目基于 [Creative Commons BY 4.0 许可协议](https://creativecommons.org/licenses/by/4.0/) 共享。
+
 
 
 <br>
@@ -35,8 +37,6 @@ sudo：只有root可用。（使用sudo前缀或用su进入root用户）<br>
 <br>
 本表内会存在后续表，且同一部分的内容在表格中的颜色是相同的。<br>
 此外，本表暂时不会提供文本编辑器的使用教程——因为我自己也没啃下来vim。<br>
-在文本编辑器部分中，使用难度：nano < vim（vi） < emacs。我个人还是喜欢使用nano进行编辑，因为学习成本较低。<br>
-<br>
 如果找不到指令，请直接：<br>
 $ sudo apt update<br>
 $ sudo apt install <cmd><br>
