@@ -1,19 +1,21 @@
 # SSH相关教程：
 
 ## 1. SSH连接流程：
-建立TCP连接 - 检查身份（公钥-密码） - 会话建立 - 成功！
-服务器端必须有公钥。
-
+建立TCP连接 - 检查身份（公钥-密码） - 会话建立 - 成功！<br>
+服务器端必须有上传的公钥。如果没有公钥，则必须使用如下方法创建你的公钥（和对应的私钥）：<br>
+```
+$ ssh-keygen
+```
 ## 2. SSH连接方法：
 ```
 ssh [options] user@host
-ssh -T git@github.com
+$ ssh -T git@github.com
 ```
 其中，options的值将在下文中介绍。<br>
 
 ## 3. SSH断开方法：
 ```
-> exit
+$ exit
 ```
 或者：ctrl+D <br>
 
