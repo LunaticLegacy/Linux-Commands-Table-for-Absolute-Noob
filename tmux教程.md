@@ -94,3 +94,5 @@ tmux ls
 tmux kill-session -t <session_name>
 ```
 手动杀死会话的命令请在shell中使用。
+
+## END OF FILE
