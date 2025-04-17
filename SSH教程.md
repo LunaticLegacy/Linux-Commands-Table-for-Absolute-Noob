@@ -92,16 +92,20 @@ git@github.com: Permission denied (publickey).
 ### 7.2 连接到用户后，如果远程服务器对该用户也有密码，还需要输入用户密码吗？
 如果在服务器文件`/etc/ssh/sshd_config`中，字段`AuthenticationMethods`未显式要求密码，<br>
 则只要公钥验证通过，就不会再提示输入用户密码，可直接登入。<br>
-如果管理员在 sshd_config 中设置了：
+如果管理员在`sshd_config`中设置了：
 ```text
 AuthenticationMethods publickey,password
 ```
 则意味着“必须同时通过公钥签名验证和用户密码验证”才算完整认证流程。这时，在公钥阶段后你还会看到类似：
-
 ```bash
 $ user@server's password:
 ```
-提示你输入该账户在服务器上的登录密码。
+提示你输入该账户在服务器上的登录密码。<br>
+但如果设置了：
+```
+AuthenticationMethods publickey
+```
+则意味着“仅通过公钥签名验证”即可（禁用密码）。这时公钥验证结束后，身份认证直接通过，不会再看到类似提示。<br>
+*小声：sshd_config文件不一定存在。它作为服务端行为，而ssh_config为客户端行为*
 
-
-## 最后更新日期：2025/4/17 18:14
+## 最后更新日期：2025/4/17 18:35
