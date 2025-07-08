@@ -4,11 +4,11 @@
 
 Auth: **月と猫 - LunaNeko** (GitHub: LunaticLegacy) 
 
-Environment: **Any** 
+Written in environment: Windows 11, git version: 2.47.0 
 
 本文作为个人笔记，可作为新手快速入门教程食用，但**可能存在错误**。所有能被写进这个.md文件里的都是我亲自实验过或者来自文档内容的。
 
-心理准备：Git是一个**按批次更改文件的、基于提交历史记录和分支**的版本控制系统。
+心理准备：Git是一个**按批次更改文件的、基于提交节点**的版本控制系统。
 
 **本文适合有一定shell使用基础的人食用，无论是Windows Powershell还是Linux的bash。**
 
@@ -31,8 +31,9 @@ git clone https://github.com/LunaticLegacy/Linux-Commands-Table-for-Absolute-Noo
 - 1.4 分支是什么？
 
 2. 远程仓库
-- 2.1 
--
+- 2.1 建立并配置远程仓库
+- 2.2 将代码推送到远程仓库
+- 2.3 从远程仓库同步代码
 
 ## 1. 本地仓库
 
@@ -101,7 +102,7 @@ git commit -m "commit message"
 以描述当前改动。一般在大型项目合作中，对改动的描述是义务性质的。
 
 例如：
-```bash
+```powershell
 PS E:\Linux-Commands-Table-for-Absolute-Noob> git commit -m "2025/7/7: 增加文件：git教程.md。"
 [main cd01ad3] 2025/7/7: 增加文件：git教程.md。
  1 file changed, 72 insertions(+)
@@ -110,6 +111,17 @@ PS E:\Linux-Commands-Table-for-Absolute-Noob> git commit -m "2025/7/7: 增加文
 
 当文件被更改后，使用`git status`可看被更改的文件。
 
+如果需（在当前HEAD）进行增量更新而不创建新的git提交，使用：
+```bash
+git commit --amend [-m <"new message">] [-F <file_name>]
+```
+即可。其中-F和-m选项不得同时出现。
+
+```bash
+git commit --amend -F "./git教程.md"
+```
+以增量更新.
+
 使用：
 ```bash
 git push <repo_name> <branch_name>
@@ -117,14 +129,36 @@ git push <repo_name> <branch_name>
 以将代码推送到远程仓库。其中\<repo_name\>项需要**提前设置**。具体见[后续]()。
 
 ### 1.4 分支是什么？
+Git基于提交时间线节点进行代码管理。创建分支是为了从当前环境分离一份备份，并根据本备份独立开发。
 
-分支（Branch），用于从当前环境分离一份代码，并独立地进行开发。在新的Git仓库被创建后，一般会生成一个主分支`master`或`main`*（取决于个人配置）*。
+在新的Git仓库被创建后，一般会生成一个主分支`master`或`main`*（取决于个人配置）*。
+
+使用：
+```bash
+git log
+```
+以查看当前分支的提交情况。但一般会使用：`git log --oneline`以进行更多分支。
+
+例如：
+```powershell
+PS E:\Linux-Commands-Table-for-Absolute-Noob> git log --oneline
+8880835 (HEAD -> main) Create and Update git教程.md
+c389d94 Update README.md (#7)
+3666721 Update SSH教程.md
+d0b85b8 Update SSH教程.md
+bd01652 Update SSH教程.md (#6)
+c7e87c4 Update README.md (#5)
+524cf61 Update tmux教程.md (#4)
+304cb9f Upload tmux教程.md
+...（后略）
+```
+其中可以看到这些部分，在上例子中，节点ID`8880835`为当前HEAD所在位置——即正在被修改的节点。
 
 使用：
 ```bash
 git branch
 ```
-以查看现在有多少分支。
+以查看现在有多少分支，以及自己当前所处的分支。
 
 使用：
 ```bash
@@ -139,5 +173,25 @@ git branch -d <branch_name>
 以删除指定分支。注意：只有在当前分支下没有修改的分支才能删除。即**只能从叶分支开始删除分支**。
 
 **分支被删除是不可逆的。*（别问，问就是血的教训）***
+
+使用：
+```bash
+git checkout <branch_name>
+```
+以签出，即**将当前工作状态切换到指定分支**。
+
+签出分支时必须保证当前没有文件正在更改。
+
+使用：
+```bash
+git merge <branch_name>
+```
+以将指定的（其他）分支合并到当前分支。
+
+## 2. 远程仓库
+
+远程仓库是用于云端保存代码的在线仓库。本示例中将使用GitHub作为远程仓库。
+
+### 2.1 配置远程仓库
 
 
